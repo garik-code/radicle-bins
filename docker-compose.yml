@@ -1,0 +1,12 @@
+version: '3'
+services:
+
+  radicle-bins:
+    build:
+      context: ./radicle-bins/
+      dockerfile: Dockerfile
+    image: garik/radicle-bins
+    container_name: radicle-bins
+    restart: unless-stopped
+    # volumes:
+    #   - ./radicle-bins:/
