@@ -9,4 +9,4 @@ services:
     container_name: radicle-bins
     restart: unless-stopped
     volumes:
-      - ./keys:/.radicle-seed
+      - ./radicle-seed:/root/.radicle-seed

@@ -45,9 +45,27 @@ RUN set -eux; \
 
 
 
+
+
+
+
+
 COPY . ./node
 
-RUN cd /node/seed/ui && ls && mkdir -p ~/.radicle-seed && cargo run -p radicle-keyutil -- --filename ~/.radicle-seed/secret.key && cd ~/.radicle-seed && ls
+RUN cd /node/seed/ui && ls && mkdir -p ~/.radicle-seed && cargo run -p radicle-keyutil -- --filename ~/.radicle-seed/secret.key && cd ~/.radicle-seed && ls && pwd
+
+
+
+CMD ["echo", "Start the server with 'seed [OPTIONS]' use 'keygen' to generate the peer key. Mount a volume to '/radicle-seed' to persist the data. For help run 'seed-help'"]
+
+
+
+
+
+
+
+EXPOSE 12345
+EXPOSE 80
 
 # RUN set -eux; \
 #    cd /node/seed/ui \
