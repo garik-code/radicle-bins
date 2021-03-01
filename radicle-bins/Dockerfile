@@ -14,6 +14,7 @@ RUN set -eux; \
         libssl-dev \
         make \
         pkg-config \
+        yarn \
         ; \
     apt-get autoremove; \
     rm -rf /var/lib/apt/lists/*
@@ -42,8 +43,23 @@ RUN set -eux; \
     rm -rf /usr/local/cargo/registry; \
     rm /usr/local/cargo/.package-cache;
 
-VOLUME /cache
-ENV CARGO_HOME=/cache/cargo
+
+
+COPY . ./node
+
+RUN cd /node/seed/ui && ls && mkdir -p ~/.radicle-seed && cargo run -p radicle-keyutil -- --filename ~/.radicle-seed/secret.key && cd ~/.radicle-seed && ls
+
+# RUN set -eux; \
+#    cd /node/seed/ui \
+#    ls \
+#    yarn \
+#    yarn build \
+#    mkdir -p ~/.radicle-seed \
+#    cargo run -p radicle-keyutil -- --filename ~/.radicle-seed/secret.key
+
+
+# VOLUME /cache
+# ENV CARGO_HOME=/cache/cargo
 
 # WORKDIR /
 # ADD radicle-seed-node .

@@ -8,5 +8,5 @@ services:
     image: garik/radicle-bins
     container_name: radicle-bins
     restart: unless-stopped
-    # volumes:
-    #   - ./radicle-bins:/
+    volumes:
+      - ./radicle-bins:/node
