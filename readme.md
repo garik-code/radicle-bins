@@ -2,6 +2,10 @@
 
 ##Build
 
+`git clone radicle-bins`
+
+`copy ./Dockerfile ./radicle-bins/Dockerfile`
+
 `docker-compose up --build`
 
 ##Up
