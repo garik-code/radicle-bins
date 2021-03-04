@@ -1,26 +1,13 @@
 version: '3'
 services:
-
-  radicle-bins:
+  radicle:
+    container_name: radicle
+    hostname: radicle
     build:
       context: ./radicle-bins/
       dockerfile: Dockerfile
-    image: garik/radicle-bins
-    container_name: radicle-bins
-    restart: unless-stopped
+    ports:
+       - 80:80
+       - 12345:12345
     volumes:
-      - ./radicle-seed:/root/.radicle-seed
-
-
-# version: '3'
-# services:
-#
-#      radicle:
-#         container_name: radicle
-#         hostname: radicle
-#         build: /data/radicle/build
-#         ports:
-#            - 80:80
-#            - 12345:12345
-#         volumes:
-#            - /data/radicle/root:/root
+      - ./root:/root

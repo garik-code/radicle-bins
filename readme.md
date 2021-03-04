@@ -1,15 +1,28 @@
-#Radicle node docker-compose
+# Radicle node docker-compose
 
-##Build
+### Build
 
 `git clone radicle-bins`
 
-`copy ./Dockerfile ./radicle-bins/Dockerfile`
+`docker-compose up --build -d`
 
-`docker-compose up --build`
+### Launch
 
-##Up
+`docker exec -it radicle bash`
 
-`docker-compose up -d --no-cache`
+Generate radicle-seed secret.key:
 
-`docker exec -it radicle-bins ls`
+```mkdir -p ~/.radicle-seed
+cd /opt/radicle-bins/seed/ui
+cargo run -p radicle-keyutil -- --filename ~/.radicle-seed/secret.key```
+
+Edit ip address and launch radicle-seed (peer-listen, http-listen):
+
+```cargo run -p radicle-seed-node --release -- \
+  --root ~/.radicle-seed \
+  --peer-listen 0.0.0.0:12345 \
+  --http-listen 0.0.0.0:80 \
+  --name "seedling" \
+  --public-addr "seed.my.org:12345" \
+  --assets-path seed/ui/public \
+  < ~/.radicle-seed/secret.key```

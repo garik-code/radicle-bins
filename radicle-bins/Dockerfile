@@ -1,4 +1,15 @@
-FROM debian:buster-slim
+FROM ubuntu:latest
+
+WORKDIR /opt
+ENV DEBIAN_FRONTEND="noninteractive"
+ENV TZ 'Europe/Kiev'
+RUN apt-get update -y
+RUN echo $TZ > /etc/timezone && \
+apt-get install -y tzdata make clang pkg-config libssl-dev build-essential ntp curl git && \
+rm /etc/localtime && \
+ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
+dpkg-reconfigure -f noninteractive tzdata
+RUN ntpq -p
 
 # System packages
 RUN set -eux; \
@@ -43,42 +54,5 @@ RUN set -eux; \
     rm -rf /usr/local/cargo/registry; \
     rm /usr/local/cargo/.package-cache;
 
-
-
-
-
-
-
-
-COPY . ./node
-
-RUN cd /node/seed/ui && ls && mkdir -p ~/.radicle-seed && cargo run -p radicle-keyutil -- --filename ~/.radicle-seed/secret.key && cd ~/.radicle-seed && ls && pwd
-
-
-
-CMD ["echo", "Start the server with 'seed [OPTIONS]' use 'keygen' to generate the peer key. Mount a volume to '/radicle-seed' to persist the data. For help run 'seed-help'"]
-
-
-
-
-
-
-
-EXPOSE 12345
-EXPOSE 80
-
-# RUN set -eux; \
-#    cd /node/seed/ui \
-#    ls \
-#    yarn \
-#    yarn build \
-#    mkdir -p ~/.radicle-seed \
-#    cargo run -p radicle-keyutil -- --filename ~/.radicle-seed/secret.key
-
-
-# VOLUME /cache
-# ENV CARGO_HOME=/cache/cargo
-
-# WORKDIR /
-# ADD radicle-seed-node .
-# ENTRYPOINT ["./radicle-seed-node"]
+COPY . ./radicle-bins
+CMD tail -f /dev/null
