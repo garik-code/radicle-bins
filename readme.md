@@ -1,12 +1,14 @@
 # Radicle-bins-docker
 
-### Build
+## Build
 
 `git clone radicle-bins`
 
 `docker-compose up --build -d`
 
-### Launch
+---
+
+## Launch
 
 `docker exec -it radicle bash`
 
@@ -33,7 +35,7 @@ cargo run -p radicle-seed-node --release -- \
 
 ---
 
-### Radicle
+## Radicle
 
 Repository [github](https://github.com/radicle-dev/radicle-bins)
 
