@@ -10,3 +10,17 @@ services:
     restart: unless-stopped
     volumes:
       - ./radicle-seed:/root/.radicle-seed
+
+
+# version: '3'
+# services:
+#
+#      radicle:
+#         container_name: radicle
+#         hostname: radicle
+#         build: /data/radicle/build
+#         ports:
+#            - 80:80
+#            - 12345:12345
+#         volumes:
+#            - /data/radicle/root:/root
