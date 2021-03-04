@@ -12,17 +12,21 @@
 
 Generate radicle-seed secret.key:
 
-```mkdir -p ~/.radicle-seed
+```
+mkdir -p ~/.radicle-seed
 cd /opt/radicle-bins/seed/ui
-cargo run -p radicle-keyutil -- --filename ~/.radicle-seed/secret.key```
+cargo run -p radicle-keyutil -- --filename ~/.radicle-seed/secret.key
+```
 
 Edit ip address and launch radicle-seed (peer-listen, http-listen):
 
-```cargo run -p radicle-seed-node --release -- \
+```
+cargo run -p radicle-seed-node --release -- \
   --root ~/.radicle-seed \
   --peer-listen 0.0.0.0:12345 \
   --http-listen 0.0.0.0:80 \
   --name "seedling" \
   --public-addr "seed.my.org:12345" \
   --assets-path seed/ui/public \
-  < ~/.radicle-seed/secret.key```
+  < ~/.radicle-seed/secret.key
+```
