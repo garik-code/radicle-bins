@@ -35,6 +35,4 @@ cargo run -p radicle-seed-node --release -- \
 
 ---
 
-## Radicle
-
-[github](https://github.com/radicle-dev/radicle-bins) • [documentation](https://docs.radicle.xyz/docs/using-radicle/running-a-seed-node)
+[Radicle Bins github](https://github.com/radicle-dev/radicle-bins) • [Running a seed node](https://docs.radicle.xyz/docs/using-radicle/running-a-seed-node)
