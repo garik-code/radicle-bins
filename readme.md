@@ -1,4 +1,4 @@
-# Radicle node docker-compose
+# Radicle-bins-docker
 
 ### Build
 
