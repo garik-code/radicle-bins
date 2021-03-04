@@ -2,7 +2,7 @@
 
 ## Build
 
-`git clone radicle-bins`
+`git clone https://github.com/garik-code/radicle-bins-docker`
 
 `docker-compose up --build -d`
 
