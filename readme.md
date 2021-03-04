@@ -33,8 +33,8 @@ cargo run -p radicle-seed-node --release -- \
 
 ---
 
-# Radicle
+### Radicle
 
-Repo [github](https://github.com/radicle-dev/radicle-bins)
+Repository [github](https://github.com/radicle-dev/radicle-bins)
 
 Install [documentation](https://docs.radicle.xyz/docs/using-radicle/running-a-seed-node)
