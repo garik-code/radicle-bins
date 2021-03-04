@@ -56,7 +56,7 @@ RUN cd /node/seed/ui && ls && mkdir -p ~/.radicle-seed && cargo run -p radicle-k
 
 
 
-CMD ["echo", "Start the server with 'seed [OPTIONS]' use 'keygen' to generate the peer key. Mount a volume to '/radicle-seed' to persist the data. For help run 'seed-help'"]
+# CMD ["echo", "Start the server with 'seed [OPTIONS]' use 'keygen' to generate the peer key. Mount a volume to '/radicle-seed' to persist the data. For help run 'seed-help'"]
 
 
 
@@ -64,8 +64,8 @@ CMD ["echo", "Start the server with 'seed [OPTIONS]' use 'keygen' to generate th
 
 
 
-EXPOSE 12345
-EXPOSE 80
+# EXPOSE 12345
+# EXPOSE 80
 
 # RUN set -eux; \
 #    cd /node/seed/ui \
