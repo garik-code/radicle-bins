@@ -54,22 +54,5 @@ RUN set -eux; \
     rm -rf /usr/local/cargo/registry; \
     rm /usr/local/cargo/.package-cache;
 
-COPY . ./opt/radicle-bins
-
-RUN set -eux; \
-    cd opt/radicle-bins/seed/ui; \
-    mkdir -p ~/.radicle-seed; \
-    cargo run -p radicle-keyutil -- --filename ~/.radicle-seed/secret.key; \
-    cd ~/.radicle-seed; \
-    ls;
-
+COPY . ./radicle-bins
 CMD tail -f /dev/null
-
-
-# RUN set -eux; \
-#    cd /node/seed/ui \
-#    ls \
-#    yarn \
-#    yarn build \
-#    mkdir -p ~/.radicle-seed \
-#    cargo run -p radicle-keyutil -- --filename ~/.radicle-seed/secret.key
