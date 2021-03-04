@@ -56,7 +56,12 @@ RUN set -eux; \
 
 COPY . ./opt/radicle-bins
 
-RUN cd /opt/radicle-bins/seed/ui && ls && mkdir -p ~/.radicle-seed && cargo run -p radicle-keyutil -- --filename ~/.radicle-seed/secret.key && cd ~/.radicle-seed && ls && pwd
+RUN set -eux; \
+    cd opt/radicle-bins/seed/ui; \
+    mkdir -p ~/.radicle-seed; \
+    cargo run -p radicle-keyutil -- --filename ~/.radicle-seed/secret.key; \
+    cd ~/.radicle-seed; \
+    ls;
 
 CMD tail -f /dev/null
 
