@@ -1,4 +1,4 @@
-# Radicle-bins-docker
+# Radicle-bins-docker 👏
 
 ## Build
 
