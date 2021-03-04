@@ -30,3 +30,11 @@ cargo run -p radicle-seed-node --release -- \
   --assets-path seed/ui/public \
   < ~/.radicle-seed/secret.key
 ```
+
+---
+
+# Radicle
+
+Repo [github](https://github.com/radicle-dev/radicle-bins)
+
+Install [documentation](https://docs.radicle.xyz/docs/using-radicle/running-a-seed-node)
