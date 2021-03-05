@@ -14,7 +14,7 @@ More details [Radicle](https://radicle.xyz/).
 
 `docker exec -it radicle bash`
 
-Generate radicle-seed secret.key:
+Generate secret.key:
 
 ```
 mkdir -p ~/.radicle-seed
@@ -22,7 +22,7 @@ cd /opt/radicle-bins/seed/ui
 cargo run -p radicle-keyutil -- --filename ~/.radicle-seed/secret.key
 ```
 
-Edit ip address and nickname. Launch radicle-seed (peer-listen, http-listen):
+Run radicle-seed-node:
 
 ```
 cd /opt/radicle-bins/seed/ui
