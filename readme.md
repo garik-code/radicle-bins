@@ -1,5 +1,7 @@
 # Radicle-bins-docker 👏
 
+More details [radicle](https://radicle.xyz/)
+
 ## Build
 
 `git clone https://github.com/garik-code/radicle-bins-docker`
