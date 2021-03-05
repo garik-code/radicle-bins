@@ -29,7 +29,7 @@ cargo run -p radicle-seed-node --release -- \
   --peer-listen 0.0.0.0:12345 \
   --http-listen 0.0.0.0:80 \
   --name "YOUR NICKNAME" \
-  --public-addr "YOUR ID ADDRESS:12345" \
+  --public-addr "YOUR IP ADDRESS:12345" \
   --assets-path /opt/radicle-bins/seed/ui/public \
   < ~/.radicle-seed/secret.key
 ```
