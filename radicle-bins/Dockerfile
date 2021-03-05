@@ -33,6 +33,7 @@ RUN set -eux; \
 # Rust toolchain
 # Make sure this is in sync with rust-toolchain!
 ENV RUST_VERSION=nightly-2020-11-10 \
+    RUST_BACKTRACE=1 \
     CARGO_HOME=/usr/local/cargo \
     PATH=/usr/local/cargo/bin:$PATH \
     RUSTUP_HOME=/usr/local/rustup \
