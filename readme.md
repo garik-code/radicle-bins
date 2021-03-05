@@ -28,7 +28,7 @@ cargo run -p radicle-seed-node --release -- \
   --root ~/.radicle-seed \
   --peer-listen 0.0.0.0:12345 \
   --http-listen 0.0.0.0:80 \
-  --name "seedling" \
+  --name "YOUR NICKNAME" \
   --public-addr "YOUR IP ADDRESS:12345" \
   --assets-path seed/ui/public \
   < ~/.radicle-seed/secret.key
