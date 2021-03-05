@@ -23,6 +23,7 @@ cargo run -p radicle-keyutil -- --filename ~/.radicle-seed/secret.key
 Edit ip address and launch radicle-seed (peer-listen, http-listen):
 
 ```
+cd /opt/radicle-bins/seed/ui
 cargo run -p radicle-seed-node --release -- \
   --root ~/.radicle-seed \
   --peer-listen 0.0.0.0:12345 \
