@@ -1,6 +1,6 @@
 # Radicle-bins-docker 👏
 
-More details [radicle](https://radicle.xyz/)
+More details [Radicle](https://radicle.xyz/).
 
 ## Build
 
