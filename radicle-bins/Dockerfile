@@ -2,7 +2,7 @@ FROM ubuntu:latest
 
 WORKDIR /opt
 ENV DEBIAN_FRONTEND="noninteractive"
-ENV TZ 'Europe/Kiev'
+ENV TZ 'Europe/Moscow'
 RUN apt-get update -y
 RUN echo $TZ > /etc/timezone && \
 apt-get install -y tzdata make clang pkg-config libssl-dev build-essential ntp curl git && \
